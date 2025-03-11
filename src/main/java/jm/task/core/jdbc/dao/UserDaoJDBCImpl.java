@@ -1,4 +1,4 @@
-package jm.task.core.jdbc.dao;
+/*package jm.task.core.jdbc.dao;
 
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
@@ -12,7 +12,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public UserDaoJDBCImpl() {
 
     }
-
+    @Override
     public void createUsersTable() {
 
         String sql = "CREATE TABLE IF NOT EXISTS users (id BIGINT PRIMARY KEY AUTO_INCREMENT," +
@@ -27,7 +27,7 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Ошибка при создании таблицы " + e.getMessage());
         }
     }
-
+    @Override
     public void dropUsersTable() {
         String dsql = "DROP TABLE IF EXISTS users";
         try {
@@ -39,7 +39,7 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Ошибка при удалении таблицы" + e.getMessage());
         }
     }
-
+    @Override
     public void saveUser(String name, String lastName, byte age) {
         String ssql = "INSERT INTO users (name, lastName, age) VALUES (?, ?, ?)";
         try {
@@ -55,7 +55,7 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Ошибка при добавлении пользователя" + e.getMessage());
         }
     }
-
+    @Override
     public void removeUserById(long id) {
         String rsql = "DELETE FROM users WHERE id = ?";
         try {
@@ -68,7 +68,7 @@ public class UserDaoJDBCImpl implements UserDao {
             System.out.println("Ошибка" + e.getMessage());
         }
     }
-
+    @Override
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<>();
         String gsql = "SELECT * FROM users";
@@ -88,17 +88,16 @@ public class UserDaoJDBCImpl implements UserDao {
         }
         return users;
     }
-
+    @Override
     public void cleanUsersTable() {
         String csql = "DELETE FROM users";
         try {
             Connection connection = Util.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(csql);
             preparedStatement.executeUpdate();
-            //System.out.println("Таблица Users очищена");
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
-}
+}*/
